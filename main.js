@@ -1,8 +1,6 @@
 var gpio = require('rpi-gpio');
 
 const targetGpio = 17;
-const LED_PIN = 40; // 40番ピン（GPIO40ではない、GPIO21）
-const LED_BLINK_DELAY_MS = 1000;  // 1秒毎にLチカ
 const gpioToPinMap = {
   //gpio:pin
   2:3,
@@ -26,8 +24,10 @@ const gpioToPinMap = {
   17:11,
 }
 var ledOn = true;
+const LED_PIN = gpioToPinMap[targetGpio];
+const LED_BLINK_DELAY_MS = 1000;  // 1秒毎にLチカ
 
-gpio.setup(gpioToPinMap(targetGpio), gpio.DIR_OUT, () => {
+gpio.setup(LED_PIN, gpio.DIR_OUT, () => {
 
   // LED_BLINK_DELAY_MS毎にLED ON/OFF
   setInterval(() => {
