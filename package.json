@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/mkXultra/js_mock_v1_led_blink/issues"
   },
-  "homepage": "https://github.com/mkXultra/js_mock_v1_led_blink#readme"
+  "homepage": "https://github.com/mkXultra/js_mock_v1_led_blink#readme",
+  "dependencies": {
+    "rpi-gpio": "^2.1.7"
+  }
 }
